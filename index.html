@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Twitch tv Api </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+  
+  <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css'>
+
+      <link rel="stylesheet" href="css/style.css">
+
+  
+</head>
+
+<body>
+  <div class="container" ng-app="TwitchStream" >
+  
+  <header >TWITCH STREAMERS</header>
+  <section ng-controller="Controller">
+    <nav class="navbar navbar-default">  
+      <div class="selector active" id="all" >
+        <button class="btn " ng-click="showAll()"><i class="fa fa-users"> All</i></button>
+      </div>
+      <div class="selector" id="online" >
+       <button class="btn " ng-click="showonline()"><i class="fa fa-user"> Online</i> </button>
+      </div>
+      <div class="selector" id="offline" >
+        <button class="btn " ng-click="showoffline()"><i class="fa fa-user-times"> Offline</i></button>
+        
+     </nav>
+      
+    <div class="sea">
+        
+        
+        <input  ng-model="query" type="search" placeholder="Search for streamer" autofocus>
+        </div>
+      
+  <div class="results"  ng-repeat="user in result |limitTo: 37| filter: query">
+    
+    
+   
+      <img class="display-pic img-circle pull-left" ng-src="{{user.logo}}" >
+     <a ng-href="http://twitch.tv/{{user.name}}" target="_blank" class="display-name pull-left">{{user.name}}</a>
+       <i ng-class="{ green :user.status, purple:user.ins}"  class="fa fa-circle red pull-right"  ></i>
+    
+    
+    <p small class="stat">{{user.status}}</p>
+   
+   
+  </div>
+      </section>
+
+ </div>
+    <footer>2016 Paschalis Valtsianis</footer>
+  <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js'></script>
+<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
+
+    <script src="js/index.js"></script>
+
+</body>
+</html>
