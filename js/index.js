@@ -4,7 +4,7 @@ app.controller("Controller", function($scope,$http){
   var streamer= ["Freecodecamp", "GeoffStorbeck", "Terakilobyte",       "Habathcx","Notmichaelmcdonald","RobotCaleb","Medrybw","Comster404","Brunofin","Thomasballinger","Joe_at_underflow","Noobs2ninjas","Mdwasp","Beohoff","Xenocomagain","Papfirm1908","LotharHS","TSM_Dyrus","Nightblue3","Gripex90","olofmeister","ESL_SC2"];
 
   var callback = '/?callback=?';
-	var url = 'https://wind-bow.hyperdev.space/twitch-api/';
+	var url = 'https://wind-bow.glitch.me/twitch-api/';
   $scope.All=[];
   $scope.online=[];
   $scope.offline=[];
@@ -31,7 +31,7 @@ app.controller("Controller", function($scope,$http){
             temp.status="Account Closed" ;
             temp.ins=temp.status;
             }
-        temp.logo =data.logo? data.logo:"http://res.cloudinary.com/dannycoder/image/upload/v1450656122/img-placeholder_kuedre.jpg";
+        temp.logo =data.logo? data.logo:"https://res.cloudinary.com/dannycoder/image/upload/v1450656122/img-placeholder_kuedre.jpg";
         
             console.log(temp);
      
